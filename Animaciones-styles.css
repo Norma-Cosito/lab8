@@ -1,0 +1,50 @@
+body {
+    background: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    display: inline-block; /* Muestra las cajas en línea */
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.caja1 {
+    background: red;
+    animation: crecer 2s infinite alternate; /* Animación de crecimiento */
+}
+
+.caja2 {
+    background: green;
+    transform-style: preserve-3d; /* Necesario para animaciones 3D */
+    animation: girar3d 3s infinite linear; /* Animación de rotación 3D */
+}
+
+.caja3 {
+    background: blue;
+    animation: moverColor 2.5s infinite alternate; /* Animación de traslación y cambio de color */
+}
+
+/* Definición de la animación de crecimiento */
+@keyframes crecer {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); } /* Escala al 150% a mitad de la animación */
+    100% { transform: scale(1); }
+}
+
+/* Definición de la animación de rotación 3D */
+@keyframes girar3d {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Definición de la animación de movimiento y cambio de color */
+@keyframes moverColor {
+    0% { transform: translateY(0); background: blue; }
+    50% { transform: translateY(-30px); background: lightblue; } /* Sube 30px y cambia a azul claro */
+    100% { transform: translateY(0); background: blue; }
+}
